@@ -1,78 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My Basic Website</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+<meta charset="UTF-8">
+<title>The Bot Prison</title>
 
-        header {
-            background-color: #333;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
+<!-- In your <head> -->
+<link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
 
-        nav {
-            background-color: #444;
-            padding: 10px;
-            text-align: center;
-        }
+<style>
+  body {
+    font-family: 'Mouse Memoirs', cursive;
+  }
+</style>
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
+<style>
+  /* Full-page background image */
+  #bg {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+  /* Bot honeypot form completely invisible to humans */
+  #botForm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;           /* invisible */
+    pointer-events: none;  /* not clickable */
+    width: 1px;           /* tiny footprint */
+    height: 1px;
+    overflow: hidden;
+    z-index: -1;          /* behind everything */
+  }
 
-        main {
-            padding: 20px;
-        }
+  #botForm input {
+    display: block;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
 
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+  /* Title image and heading */
+  #titleImage {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top: 0;
+    width: 800px;
+    z-index: 1;
+  }
+
+  
+</style>
 </head>
-
 <body>
 
-    <header>
-        <h1>My Website</h1>
-    </header>
+<!-- Background -->
+<img id="bg" src="dungeon.jpeg" alt="Dungeon Background">
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </nav>
+<!-- Visible title -->
+<img id="titleImage" src="Title.png" alt="Title">
 
-    <main>
-        <h2>Welcome!</h2>
-        <p>This is a simple HTML website template.</p>
-        <p>You can edit this text to add your own content.</p>
-    </main>
+<h1 style="
+  font-size: 40px;
+  text-align: center;
+  display: block;
+  width: max-content;
+  margin: 0 auto;
+  background: linear-gradient(90deg, #450000 0%, #ff0000 51%, #450000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;   /* allows z-index to work */
+  z-index: 1;           /* above background */
+">
+—By MCRW—
+</h1>
 
-    <footer>
-        <p>© 2026 My Website</p>
-    </footer>
+<div style="
+  font-size: 40px;       /* smaller text */
+  line-height: 1.5;      /* space between lines */
+  text-align: left;      /* left-aligned */
+  color: white;          /* visible over dark background */
+  max-width: 1000px;      /* optional width */
+  margin: 50px;          /* spacing from top/left */
+">
+Hello fellow human! The chances that you are a human are
+actually pretty small...anyway...Welcome to The Bot Prison!<br>
+Ever had problems with bots entering your website? No problem!
+Once you are sure it is a bot, redirect them here! They will be
+stuck in here for a little (a little longer) while... trying
+to steal data... it's basically a torture for bots!<br>
+hmm...
+Just paste this when you know is a bot:
+===============================================================
+window.location.href = "https://mcrw13.github.io/TheBotPrison/";
+===============================================================
+</div>
+<div style="text-align: center; margin-top: 20px;">
+<button id="copyBtn" style="
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #222;
+  color: rgb(255, 0, 0);
+  border: 2px solid rgb(128, 0, 0);
+  border-radius: 8px;
+  cursor: pointer;
+  
+">
+Copy Redirect Script
+</button>
+</div>
+<script>
+const tsText = `window.location.href = "https://mcrw13.github.io/TheBotPrison/";`;
 
+document.getElementById("copyBtn").addEventListener("click", () => {
+  navigator.clipboard.writeText(tsText).then(() => {
+    alert("Script copied to clipboard!");
+  }).catch(err => {
+    alert("Failed to copy: " + err);
+  });
+});
+</script>
+
+
+
+<!-- Invisible honeypot form for bots -->
+<form id="botForm" method="POST" action="#">
+  <input type="text" name="username">
+  <input type="email" name="email">
+  <input type="password" name="password">
+  <input type="password" name="confirm_password">
+  <input type="text" name="account_id">
+  <input type="text" name="member_id">
+  <input type="text" name="client_id">
+  <input type="text" name="organization">
+  <input type="text" name="org_code">
+  <input type="text" name="access_key">
+  <input type="text" name="api_key">
+  <input type="text" name="session_token">
+  <input type="text" name="auth_token">
+  <input type="text" name="security_token">
+  <input type="text" name="secret_key">
+  <input type="text" name="pin">
+  <input type="text" name="otp">
+  <input type="text" name="two_factor">
+  <input type="text" name="backup_code">
+  <input type="text" name="verification_code">
+  <input type="text" name="security_answer">
+  <input type="text" name="mother_maiden_name">
+  <input type="text" name="ssn">
+  <input type="text" name="tax_id">
+  <input type="text" name="passport_number">
+  <input type="text" name="license_number">
+  <input type="text" name="employee_id">
+  <input type="text" name="employee_code">
+  <input type="text" name="department">
+  <input type="text" name="role">
+  <input type="text" name="user_role">
+  <input type="text" name="account_type">
+  <input type="text" name="subscription_id">
+  <input type="text" name="billing_id">
+  <input type="text" name="invoice_number">
+  <input type="text" name="credit_card">
+  <input type="text" name="card_number">
+  <input type="text" name="cvv">
+  <input type="text" name="expiration_date">
+  <input type="text" name="routing_number">
+  <input type="text" name="bank_account">
+  <input type="text" name="iban">
+  <input type="text" name="swift_code">
+  <input type="text" name="wallet_id">
+  <input type="text" name="crypto_key">
+  <input type="text" name="address_line1">
+  <input type="text" name="address_line2">
+  <input type="text" name="city">
+  <input type="text" name="state">
+  <input type="text" name="zipcode">
+  <input type="text" name="country">
+  <input type="text" name="phone">
+  <input type="text" name="mobile">
+  <input type="text" name="fax">
+  <input type="text" name="alternate_email">
+  <input type="text" name="nickname">
+  <input type="text" name="middle_name">
+  <input type="text" name="display_name">
+  <input type="text" name="user_handle">
+  <input type="text" name="referral_code">
+  <input type="text" name="promo_code">
+  <input type="text" name="activation_code">
+  <input type="text" name="reset_token">
+  <input type="text" name="captcha_response">
+  <input type="text" name="challenge_answer">
+  <input type="text" name="meta_data">
+  <input type="text" name="debug_flag">
+  <button type="submit">Login</button>
+</form>
+
+<script>
+(function() {
+  const form = document.getElementById("botForm");
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    let filledFields = 0;
+    form.querySelectorAll("input").forEach(input => {
+      if (input.value.trim() !== "") filledFields++;
+    });
+    console.log("Bot submission detected. Fields filled:", filledFields);
+    alert("Invalid credentials."); // harmless response
+  });
+})();
+</script>
+
+<img src="https://gifdb.com/images/high/angry-floppa-hissing-close-up-newv4kidh6al5qbn.gif" jsaction="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 498px; height: 100px; margin: 0px; width: 100px;" alt="Floppa Head On Rotating Cube GIF | GIFDB.com" jsname="kn3ccd">
+<img src="https://media.tenor.com/z4llFHvQ2mwAAAAM/floppa-floppa-spin.gif" jsaction="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 220px; height: 100px; margin: 0px; width: 119px;" alt="Floppa Spin GIF – Floppa Spin – discover and share GIFs" jsname="kn3ccd">
+<iframe src="https://john.citrons.xyz/embed?ref=example.com" style="margin-left:auto;display:block;margin-right:auto;max-width:732px;width:100%;height:94px;border:none;"></iframe>
+<script src="script.js"></script>
 </body>
-</html>
+</html> 
