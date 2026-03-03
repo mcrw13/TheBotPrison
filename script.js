@@ -1,4 +1,4 @@
-const audio = new Audio('Mysterious Ways.mp3');
+const audio = new Audio('Map/Mysterious Ways.mp3');
 audio.loop = true;
 audio.volume = 0.7;
 
