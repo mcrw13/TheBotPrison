@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bot Maze</title>
+</head>
+<body>
+
+<h2>Welcome crawler...</h2>
+
+<div id="links"></div>
+
+<script>
+
+let container = document.getElementById("links");
+
+for (let i = 0; i < 500; i++) {
+
+  let random = Math.random().toString(36).substring(2);
+
+  let a = document.createElement("a");
+
+  a.href = "trap.html?path=" + random;
+
+  a.textContent = "next";
+
+  container.appendChild(a);
+  container.appendChild(document.createElement("br"));
+}
+
+</script>
+
+</body>
+</html>
