@@ -89,17 +89,18 @@
   max-width: 1000px;
   margin: 50px;
 ">
-dHello fellow human! The chances that you are a human are
-actually pretty small...anyway...Welcome to The Bot Prison!<br>
-Ever had problems with bots entering your website? No problem!
-Once you are sure it is a bot, redirect them here! They will be
-stuck in here for a little (a little longer) while... trying
-to steal data... it's basically a torture for bots!<br>
-hmm...
-Just paste this when you know is a bot:
-===============================================================
-window.location.href = "https://mcrw13.github.io/TheBotPrison/";
-===============================================================
+Hello fellow human! The chances that you are a human are actually pretty small...
+anyway...Welcome to The Bot Prison!
+Is your website being attacked by bots? It is.
+Ever wanted to get rid of them? You have. You will have.
+No problem! Once you are sure it is a bot, redirect them here! They will be stuck 
+in here for a while(for details read “How it works:”)... trying to steal data...
+trying to find links…it's basically a torture for bots!
+hmm... Just paste this when you know is a bot: 
+  =============================================================== 
+  window.location.href = "https://mcrw13.github.io/TheBotPrison/"; 
+  ===============================================================
+
 </div>
 
 <div style="text-align: center; margin-top: 20px;">
@@ -227,5 +228,51 @@ document.getElementById("copyBtn").addEventListener("click", () => {
 <a href="trap.html?cell=<?php echo rand(); ?>" style="position:absolute; left:-9999px; top:-9999px; width:1px; height:1px; overflow:hidden;">
     Invisible Bot Trap
 </a>
+  <p><strong style="font-size: 22px;">How it works:</strong><br>
+I’m glad this turned out so well…this is actually one of the least unimportant 
+things I’ve done so far! Anyway here is how it works:<br>
+First, this page detects any kind of bots and sends them to another page.
+(If you are a human and still somehow get sent to the second page
+you should consider making a change in your life)<br>
+Now, the second page is filled with 1000 different links that send the
+bot to other pages with 1000 different links each…so basically if it goes
+through the first 10 pages the number of links it needs to go through is 
+already 1000^10. To understand that better…that is
+<strong style="font-size: 22px;">ONE NONILLION links.</strong><br>
+Written out, that’s:
+<strong style="font-size: 22px;">1,000,000,000,000,000,000,000,000,000,000</strong>
+(Btw there are 30 zeros)
+</p>
+
+<br>
+
+<p><strong style="font-size: 22px;">Time and memory</strong><br>
+This wastes days, weeks, or forever, depending on the bot’s resources. But you 
+don’t just waste their time…you waste their memory! Bots try to store URLs to keep 
+track of what they’ve visited. For just 10 pages that’s 1 nonillion URLs, no computer
+can store that. This fills memory, slows down the bot, and eventually crashes it.
+</p>
+
+<br>
+
+<p><strong style="font-size: 22px;">CPU & Resource Exhaustion</strong><br>
+Following, parsing, and evaluating each page costs CPU cycles. Exponentially
+growing links = exponentially growing processing needs. Bots burn CPU, making
+them slow or entirely unusable.
+</p>
+
+<br>
+
+<p><strong style="font-size: 22px;">Data Protection</strong><br>
+If bots were trying to scrape your content or data, they’ll waste time in the trap 
+instead of reaching sensitive pages. Essentially, it acts like a digital moat around 
+your real site content.
+</p>
+
+<br>
+
+<p>Notice: More advanced bots will not search without stopping…having depth
+limits and stuff like that…but at least you got rid of them and wasted their 
+time and memory.</p>
 </body>
 </html>
