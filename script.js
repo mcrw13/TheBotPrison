@@ -15,3 +15,10 @@ window.addEventListener('load', () => {
 document.getElementById('playButton').addEventListener('click', () => {
     playAudio();
 });
+
+for (let i = 0; i < 10; i++) {
+  let a = document.createElement("a");
+  a.href = "/TheBotPrison/?page=" + Math.random().toString(36);
+  a.innerText = "Next";
+  document.body.appendChild(a);
+}
