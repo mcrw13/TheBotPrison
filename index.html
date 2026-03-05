@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>The Bot Prisondebug</title>
+<title>The Bot Prison</title>
 
 <!-- In your <head> -->
 <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
@@ -56,8 +56,6 @@
     width: 800px;
     z-index: 1;
   }
-
-  
 </style>
 </head>
 <body>
@@ -77,21 +75,21 @@
   background: linear-gradient(90deg, #450000 0%, #ff0000 51%, #450000 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  position: relative;   /* allows z-index to work */
-  z-index: 1;           /* above background */
+  position: relative;  
+  z-index: 1;           
 ">
 —By MCRW—
 </h1>
 
 <div style="
-  font-size: 40px;       /* smaller text */
-  line-height: 1.5;      /* space between lines */
-  text-align: left;      /* left-aligned */
-  color: white;          /* visible over dark background */
-  max-width: 1000px;      /* optional width */
-  margin: 50px;          /* spacing from top/left */
+  font-size: 40px;
+  line-height: 1.5;
+  text-align: left;
+  color: white;
+  max-width: 1000px;
+  margin: 50px;
 ">
-Hello fellow human! The chances that you are a human are
+dHello fellow human! The chances that you are a human are
 actually pretty small...anyway...Welcome to The Bot Prison!<br>
 Ever had problems with bots entering your website? No problem!
 Once you are sure it is a bot, redirect them here! They will be
@@ -103,6 +101,7 @@ Just paste this when you know is a bot:
 window.location.href = "https://mcrw13.github.io/TheBotPrison/";
 ===============================================================
 </div>
+
 <div style="text-align: center; margin-top: 20px;">
 <button id="copyBtn" style="
   padding: 15px 30px;
@@ -113,11 +112,11 @@ window.location.href = "https://mcrw13.github.io/TheBotPrison/";
   border: 2px solid rgb(128, 0, 0);
   border-radius: 8px;
   cursor: pointer;
-  
 ">
 Copy Redirect Script
 </button>
 </div>
+
 <script>
 const tsText = `window.location.href = "https://mcrw13.github.io/TheBotPrison/";`;
 
@@ -129,8 +128,6 @@ document.getElementById("copyBtn").addEventListener("click", () => {
   });
 });
 </script>
-
-
 
 <!-- Invisible honeypot form for bots -->
 <form id="botForm" method="POST" action="#">
@@ -204,24 +201,11 @@ document.getElementById("copyBtn").addEventListener("click", () => {
   <button type="submit">Login</button>
 </form>
 
+<!-- Maze links container for crawlers -->
+<div id="links"></div>
+
 <script>
-const container = document.getElementById("links");
-
-for (let i = 0; i <200; i++) {
-  let a = document.createElement("a");
-
-  // generate random URL parameter
-  let random = Math.random().toString(36).substring(2, 10);
-
-  a.href = "?page=" + random;
-  a.textContent = "Next path " + (i + 1);
-
-  container.appendChild(a);
-  container.appendChild(document.createElement("br"));
-}
-</script>
-  
-<script>
+// Bot form submission detection
 (function() {
   const form = document.getElementById("botForm");
   form.addEventListener("submit", function(e) {
@@ -231,14 +215,26 @@ for (let i = 0; i <200; i++) {
       if (input.value.trim() !== "") filledFields++;
     });
     console.log("Bot submission detected. Fields filled:", filledFields);
+    window.location.href = "trap.html";
     alert("Invalid credentials."); // harmless response
   });
 })();
+
+// Generate crawler maze links
+const container = document.getElementById("links");
+for (let i = 0; i < 500; i++) {
+  let a = document.createElement("a");
+  let random = Math.random().toString(36).substring(2, 10);
+  a.href = "trap.html?path=" + random;
+  a.textContent = "next";
+  container.appendChild(a);
+  container.appendChild(document.createElement("br"));
+}
 </script>
 
-<img src="https://gifdb.com/images/high/angry-floppa-hissing-close-up-newv4kidh6al5qbn.gif" jsaction="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 498px; height: 100px; margin: 0px; width: 100px;" alt="Floppa Head On Rotating Cube GIF | GIFDB.com" jsname="kn3ccd">
-<img src="https://media.tenor.com/z4llFHvQ2mwAAAAM/floppa-floppa-spin.gif" jsaction="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 220px; height: 100px; margin: 0px; width: 119px;" alt="Floppa Spin GIF – Floppa Spin – discover and share GIFs" jsname="kn3ccd">
+<img src="https://gifdb.com/images/high/angry-floppa-hissing-close-up-newv4kidh6al5qbn.gif" style="max-width: 498px; height: 100px; margin: 0px; width: 100px;" alt="Floppa Head On Rotating Cube GIF">
+<img src="https://media.tenor.com/z4llFHvQ2mwAAAAM/floppa-floppa-spin.gif" style="max-width: 220px; height: 100px; margin: 0px; width: 119px;" alt="Floppa Spin GIF">
 <iframe src="https://john.citrons.xyz/embed?ref=example.com" style="margin-left:auto;display:block;margin-right:auto;max-width:732px;width:100%;height:94px;border:none;"></iframe>
-<script src="script.js"></script>
+
 </body>
-</html> 
+</html>
