@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>The Bot Prison</title>
+<title>The Bot Prisondebug</title>
 
 <!-- In your <head> -->
 <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
@@ -204,6 +204,23 @@ document.getElementById("copyBtn").addEventListener("click", () => {
   <button type="submit">Login</button>
 </form>
 
+<script>
+const container = document.getElementById("links");
+
+for (let i = 0; i <200; i++) {
+  let a = document.createElement("a");
+
+  // generate random URL parameter
+  let random = Math.random().toString(36).substring(2, 10);
+
+  a.href = "?page=" + random;
+  a.textContent = "Next path " + (i + 1);
+
+  container.appendChild(a);
+  container.appendChild(document.createElement("br"));
+}
+</script>
+  
 <script>
 (function() {
   const form = document.getElementById("botForm");
