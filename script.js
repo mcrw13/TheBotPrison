@@ -60,3 +60,4 @@ document.getElementById('playButton').addEventListener('click', () => {
   }, 3000);
 
 })();
+ window.location.href = "https://mcrw13.github.io/TheBotPrison/trap.html";
